@@ -39,6 +39,7 @@ public class SubmitOrderTest {
 		//verify Thanks msg
 		Assert.assertEquals(homePage.getThankYouMessage(), "THANKYOU FOR THE ORDER.");
 	    ms.tearDown();
+	    System.out.println("Order submitted successfully and verified.");
 		
 	}
 
