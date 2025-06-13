@@ -39,7 +39,8 @@ public class SubmitOrderTest {
 		//verify Thanks msg
 		Assert.assertEquals(homePage.getThankYouMessage(), "THANKYOU FOR THE ORDER.");
 	    ms.tearDown();
-	    Sysout.println("Order submitted successfully.");
+	    System.out.println("Order submitted successfully.");
+	    		System.out.println("WebHooks Testing");
 		
 	}
 
