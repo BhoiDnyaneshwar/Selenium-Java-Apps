@@ -1,0 +1,15 @@
+<Properties>
+
+<Browers>
+<browser1 webbrowser="chrome" path=""/>
+</Browers>
+
+<Urls>
+<url appurl="https://rahulshettyacademy.com/client"/>
+</Urls>
+
+<tetsAccounts>
+<testAccount  role="svcSpecialist" email="dnyanumore97+rahulshetty@gmail.com" password="RG55YW51QDEyMw=="/>
+</tetsAccounts>
+
+</Properties>
