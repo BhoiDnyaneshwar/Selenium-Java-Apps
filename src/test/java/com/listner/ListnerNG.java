@@ -11,7 +11,7 @@ import com.aventstack.extentreports.Status;
 import com.rahul.extentReport.ExtentReportNG;
 import com.rahul.pages.MS_Verification;
 
-public class ListnerNG implements ITestListener{
+public class ListnerNG extends MS_Verification implements ITestListener  {
 	public MS_Verification msv= new MS_Verification(); // Using the driver from MS_Verification class
 	ExtentReports reports=ExtentReportNG.generateReport();
 	ExtentTest test;
@@ -35,23 +35,27 @@ public class ListnerNG implements ITestListener{
 		 * TODO Auto-generated catch block e.printStackTrace(); }
 		 */
         
-        String filepath=msv.getScreenshot(result.getMethod().getMethodName(), MS_Verification.driver);
+        String filepath=getScreenshot(result.getMethod().getMethodName(), driver);
         testThread.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
     	testThread.get().fail(result.getThrowable());
-		/*
-		 * try {
-		 * driver=(WebDriver)result.getTestClass().getRealClass().getField("driver").get
-		 * (result.getInstance()); } catch (IllegalArgumentException |
-		 * IllegalAccessException | NoSuchFieldException | SecurityException e) { //
-		 * TODO Auto-generated catch block e.printStackTrace(); }
-		 */
+		
+		  try {
+		  driver=(WebDriver)result.getTestClass().getRealClass().getField("driver").get
+		  (result.getInstance()); 
+		  String filepath=getScreenshot(result.getMethod().getMethodName(), driver);
+	        testThread.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
+		  } catch (IllegalArgumentException |
+		  IllegalAccessException | NoSuchFieldException | SecurityException e) { 
+			  //TODO Auto-generated catch block 
+			  //e.printStackTrace(); 
+			  }
+		 
         
-        String filepath=msv.getScreenshot(result.getMethod().getMethodName(), MS_Verification.driver);
-        testThread.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
+		  
     }
 
     @Override

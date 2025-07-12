@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Cucumber Test(failed)">
+  <listeners>
+    <listener class-name="com.listner.ListnerNG"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="submit order(failed)">
     <classes>
-      <class name="com.rahul.webTestRunner.TesRunners">
+      <class name="testNgtests.SubmitOrderTest">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
+          <include name="submitOrderForProduct"/>
         </methods>
-      </class> <!-- com.rahul.webTestRunner.TesRunners -->
+      </class> <!-- testNgtests.SubmitOrderTest -->
     </classes>
-  </test> <!-- Cucumber Test(failed) -->
+  </test> <!-- submit order(failed) -->
+  <test thread-count="5" parallel="tests" name="Invalid Login(failed)">
+    <classes>
+      <class name="testNgtests.InvalidLogin">
+        <methods>
+          <include name="invalidLoginUsers"/>
+        </methods>
+      </class> <!-- testNgtests.InvalidLogin -->
+    </classes>
+  </test> <!-- Invalid Login(failed) -->
 </suite> <!-- Failed suite [Suite] -->
