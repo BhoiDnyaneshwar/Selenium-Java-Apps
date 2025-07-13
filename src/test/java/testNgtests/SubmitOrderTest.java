@@ -39,14 +39,13 @@ public class SubmitOrderTest {
 		//verify Thanks msg
 		Assert.assertEquals(homePage.getThankYouMessage(), "THANKYOU FOR THE ORDER.");
 	    ms.tearDown();
-<<<<<<< HEAD
+
 	    System.out.println("Order submitted successfully.");
 	    		System.out.println("WebHooks Testing");
 		
-=======
 	    System.out.println("Order submitted successfully and verified.");
-		System.out.println("Trying WebHooks");
->>>>>>> ca29d0bc2b4e9a03787f1dc1c73b8cfcc99ee902
+		System.out.println("Trying WebHooks ngrocks");
+
 	}
 
 }
